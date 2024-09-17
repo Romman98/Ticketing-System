@@ -1,0 +1,45 @@
+{% extends "tickets/_base.html" %}
+
+<html>
+    {% load static %}
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/viewtickets.css' %}">
+{% endblock extra_css %}
+    <body>
+
+    {% block content %}
+        <h1>Submitted Tickets</h1>
+
+        {% if tickets %}
+        <table>
+            <tr>
+                <th>Ticket ID</th>
+                <th>Status</th>
+                <th>Submitted Date</th>
+                <th>Traffic</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+            {% for ticket in tickets %}
+            <tr>
+                <td>{{ ticket.ticket_ID }}</td>
+                <td>{{ ticket.status }}</td>
+                <td>{{ ticket.submitted_date|date:"Y-m-d" }}</td>
+                <td>{{ ticket.traffic }}</td>
+                <td>{{ ticket.category }}</td>
+                <td><a href="{% url 'ticket_detail' ticket.ticket_ID %}">View Details</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <h2>You dont have any submitted tickets yet.</h2>
+        {% endif %}
+
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+    {% endblock content %}
+    </body>
+</html>

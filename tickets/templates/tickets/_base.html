@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    {% block extra_css %}
+    <!-- Placeholder for additional CSS files -->
+    {% endblock %}
+    <title>{% block title %}Ticketing Portal{% endblock title %}</title>
+</head>
+<body>
+    <div class='navi-bar'>
+        {% block navibar %}
+        <a href="{% url 'view_tickets' %}" class='navi-bar-tickets'>Tickets</a>
+        <a href="{% url 'create_ticket' %}">Submit a Ticket</a>
+
+</form>
+</body>
+</html></a>
+        {% endblock navibar %}
+    </div>
+    <div class='content'>
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+</html>
+

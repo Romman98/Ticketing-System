@@ -1,0 +1,11 @@
+
+
+{% for ticket in object_list %}
+    <li> TT{{ticket.ticket_ID}} | {{ticket.traffic}} | {{ticket.category}}</li>
+   
+{% endfor %}
+
+<a href="{% url 'create_ticket' %}">Submit a Ticket</a>
+
+<a href="{% url 'view_tickets' %}">View Tickets</a>
+

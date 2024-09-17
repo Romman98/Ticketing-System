@@ -1,0 +1,31 @@
+<h2>Ticket Details: TT{{ ticket.ticket_ID }}</h2>
+
+<p><strong>Traffic:</strong> {{ ticket.get_traffic_display }}</p>
+<p><strong>Category:</strong> {{ ticket.get_category_display }}</p>
+<p><strong>Status:</strong> {{ ticket.get_status_display }}</p>
+<p><strong>Description:</strong> {{ ticket.description }}</p>
+<p><strong>Submitted Date:</strong> {{ ticket.submitted_date }}</p>
+
+{% if samples %}
+<table>
+    <tr>
+        <th>Timestamp</th>
+        <th>Calling Number</th>
+        <th>Called Number</th>
+    </tr>
+    {% for sample in samples %}
+    <tr>
+        <td>{{sample.timestamp}}</td>
+        <td>{{sample.calling_number}}</td>
+        <td>{{sample.called_number}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h2>No samples provided</h2>
+
+{% endif %}
+
+
+<a href="{% url 'ticket_delete' ticket.ticket_ID %}">Delete Ticket</a>
+<a href="{% url 'view_tickets' %}">Back to My Tickets</a>
