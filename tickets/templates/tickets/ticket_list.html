@@ -1,4 +1,4 @@
-
+{% extends "tickets/_base.html" %}
 
 {% for ticket in object_list %}
     <li> TT{{ticket.ticket_ID}} | {{ticket.traffic}} | {{ticket.category}}</li>

@@ -1,11 +1,37 @@
-.navi-bar {
-    background-color: black;
-    color: orange;
-    font-weight: bold;
-    
+body {
+    margin: 0px;
 }
 
-.navi-bar-tickets {
-    color: orange;
-    
+.navi-bar {
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+    margin: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-style: normal;
+    height: 50px;
+    display: flex;
+    align-items: center;
+
 }
+
+.logo {
+    padding: 0;
+    margin: 0;
+    height: 40px;
+}
+
+.logo-div {
+    margin-right: 10px;
+    /* margin-bottom: 10px; */
+}
+
+.navi-bar a {
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .navi-bar-tickets {} */

@@ -9,16 +9,17 @@
     <title>{% block title %}Ticketing Portal{% endblock title %}</title>
 </head>
 <body>
+    {% block navibar %}
     <div class='navi-bar'>
-        {% block navibar %}
-        <a href="{% url 'view_tickets' %}" class='navi-bar-tickets'>Tickets</a>
-        <a href="{% url 'create_ticket' %}">Submit a Ticket</a>
-
-</form>
-</body>
-</html></a>
-        {% endblock navibar %}
+        <div class='logo-div'>
+            <img src="{% static 'images/logo.webp' %}" class='logo'>
+        </div>
+        <div>
+            <a href="{% url 'view_tickets' %}" class='navi-bar-tickets'>Tickets</a>
+            <a href="{% url 'create_ticket' %}">Submit a Ticket</a>
+        </div>
     </div>
+    {% endblock navibar %}
     <div class='content'>
         {% block content %}{% endblock content %}
     </div>
